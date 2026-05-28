@@ -105,3 +105,63 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(counter);
     });
 });
+// --- LÓGICA DEL PENSUM INTERACTIVO (SISTEMA DE RAMAS) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const subjects = document.querySelectorAll('.subject-btn');
+    if (subjects.length === 0) return; // Si no hay materias, no hacemos nada
+
+    // Definimos las 5 ramas de tu pensum
+    const ramas = ['estructuras', 'topografia', 'calculo', 'sanitaria', 'suelos'];
+
+    function evaluatePensum() {
+        // Evaluamos cada rama por separado
+        ramas.forEach(rama => {
+            // 1. Buscamos todas las materias de esta rama específica
+            let materiasRama = Array.from(document.querySelectorAll(`.subject-btn[data-rama="${rama}"]`));
+            
+            // 2. Las ordenamos estrictamente por su nivel (del 1 al 10)
+            materiasRama.sort((a, b) => parseInt(a.dataset.nivel) - parseInt(b.dataset.nivel));
+
+            // 3. Filtramos dejando SOLO las que NO están aprobadas
+            let materiasNoAprobadas = materiasRama.filter(sub => !sub.classList.contains('passed'));
+
+            // 4. APLICAMOS TU REGLA: Las 2 primeras de esta lista quedan disponibles, el resto se bloquea
+            materiasNoAprobadas.forEach((sub, index) => {
+                if (index < 2) {
+                    // Está dentro de las 2 siguientes disponibles
+                    sub.classList.remove('locked');
+                    sub.classList.add('available');
+                } else {
+                    // Ya está muy lejos, se bloquea
+                    sub.classList.remove('available');
+                    sub.classList.add('locked');
+                }
+            });
+        });
+    }
+
+    // Le damos vida a los botones
+    subjects.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Si está bloqueada, no hace nada al hacer clic
+            if (this.classList.contains('locked')) return;
+
+            // Si ya estaba aprobada, le quitamos la aprobación
+            if (this.classList.contains('passed')) {
+                this.classList.remove('passed');
+                this.classList.add('available');
+            } 
+            // Si estaba disponible, la marcamos como aprobada
+            else {
+                this.classList.remove('available');
+                this.classList.add('passed');
+            }
+            
+            // Re-calculamos todo el tablero al instante
+            evaluatePensum();
+        });
+    });
+
+    // Corremos la evaluación una vez al inicio por seguridad
+    evaluatePensum();
+});

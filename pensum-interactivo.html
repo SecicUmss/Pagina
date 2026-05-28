@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensum Interactivo - SECIC UMSS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-logo">SECIC</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="articulos.html">Artículos</a></li>
+            <li><a href="pensum-interactivo.html">Pensum Interactivo</a></li>
+        </ul>
+    </nav>
+
+    <div style="height: 100px;"></div>
+
+    <section class="interactive-pensum-section">
+        <div class="section-title">
+            <h2>Simulador de Malla Curricular</h2>
+            <hr class="divider">
+            <p>Se mantendrán habilitadas hasta 2 materias por rama simultáneamente.</p>
+        </div>
+
+        <div class="pensum-legend">
+            <span class="legend-item"><div class="box passed"></div> Aprobada</span>
+            <span class="legend-item"><div class="box available"></div> Disponible</span>
+            <span class="legend-item"><div class="box locked"></div> Bloqueada</span>
+        </div>
+
+        <div class="pensum-grid">
+            <div class="semester-header">1° SEMESTRE</div>
+            <div class="semester-header">2° SEMESTRE</div>
+            <div class="semester-header">3° SEMESTRE</div>
+            <div class="semester-header">4° SEMESTRE</div>
+            <div class="semester-header">5° SEMESTRE</div>
+
+            <button class="subject-btn available" data-rama="estructuras" data-nivel="1">Dib. Técnico</button>
+            <button class="subject-btn available" data-rama="estructuras" data-nivel="2">Geometría Descriptiva</button>
+            <button class="subject-btn locked" data-rama="estructuras" data-nivel="3">Análisis Vec. Tensorial</button>
+            <button class="subject-btn locked" data-rama="estructuras" data-nivel="4">Estructuras Isoestáticas</button>
+            <button class="subject-btn locked" data-rama="estructuras" data-nivel="5">Resistencia de Materiales I</button>
+
+            <button class="subject-btn available" data-rama="topografia" data-nivel="1">Álgebra I</button>
+            <button class="subject-btn available" data-rama="topografia" data-nivel="2">Álgebra II</button>
+            <button class="subject-btn locked" data-rama="topografia" data-nivel="3">Probabilidad y Estadística</button>
+            <button class="subject-btn locked" data-rama="topografia" data-nivel="4">Métodos Geodésicos</button>
+            <button class="subject-btn locked" data-rama="topografia" data-nivel="5">Geomática</button>
+
+            <button class="subject-btn available" data-rama="calculo" data-nivel="1">Cálculo I</button>
+            <button class="subject-btn available" data-rama="calculo" data-nivel="2">Cálculo II</button>
+            <button class="subject-btn locked" data-rama="calculo" data-nivel="3">Cálculo III</button>
+            <button class="subject-btn locked" data-rama="calculo" data-nivel="4">Análisis Numérico</button>
+            <button class="subject-btn locked" data-rama="calculo" data-nivel="5">Hidrología</button>
+
+            <button class="subject-btn available" data-rama="sanitaria" data-nivel="1">Física I</button>
+            <button class="subject-btn available" data-rama="sanitaria" data-nivel="2">Física II</button>
+            <button class="subject-btn locked" data-rama="sanitaria" data-nivel="3">Electrotecnia</button>
+            <button class="subject-btn locked" data-rama="sanitaria" data-nivel="4">Computación para Ingeniería</button>
+            <button class="subject-btn locked" data-rama="sanitaria" data-nivel="5">Hidráulica I</button>
+
+            <button class="subject-btn available" data-rama="suelos" data-nivel="1">Química General</button>
+            <button class="subject-btn available" data-rama="suelos" data-nivel="2">Geología General</button>
+            <button class="subject-btn locked" data-rama="suelos" data-nivel="3">Geog. y Def. de Recursos</button>
+            <button class="subject-btn locked" data-rama="suelos" data-nivel="4">Economía Política</button>
+            <button class="subject-btn locked" data-rama="suelos" data-nivel="5">Tecnología de Materiales</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

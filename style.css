@@ -458,3 +458,112 @@ body {
 .btn-download i {
     font-size: 1.5rem;
 }
+/* --- Pensum Interactivo --- */
+.interactive-pensum-section {
+    padding: 40px 5%;
+    background-color: #5a8ca8; /* Fondo azul similar al de tu diagrama */
+    min-height: 100vh;
+}
+
+.interactive-pensum-section .section-title h2, 
+.interactive-pensum-section .section-title p {
+    color: var(--white);
+}
+
+.interactive-pensum-section .divider {
+    background-color: var(--white);
+}
+
+/* Leyenda */
+.pensum-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-item .box {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid #333;
+}
+
+.box.passed { background-color: #4CAF50; }
+.box.available { background-color: white; }
+.box.locked { background-color: #a0a0a0; }
+
+/* Grilla de Materias */
+.pensum-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto; /* Para celulares */
+    padding-bottom: 20px;
+}
+
+.semester-header {
+    background-color: #88b0c7;
+    color: #1a1a1a;
+    font-weight: 900;
+    text-align: center;
+    padding: 10px;
+    border: 3px solid #1a1a1a;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Botones de Materias */
+.subject-btn {
+    padding: 15px 10px;
+    border: 3px solid #1a1a1a;
+    border-radius: 30px; /* Forma de píldora como en tu diagrama */
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ESTADOS DE LAS MATERIAS */
+.subject-btn.locked {
+    background-color: #a0a0a0;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.subject-btn.available {
+    background-color: white;
+    color: #1a1a1a;
+}
+
+.subject-btn.available:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.subject-btn.passed {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: line-through; /* Tacha el texto */
+    border-color: #2e7d32;
+}
+
+.subject-btn.passed:hover {
+    transform: scale(1.05);
+    background-color: #45a049;
+}
