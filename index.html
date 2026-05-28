@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECIC UMSS - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-logo">SECIC</div>
+       <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+             <!--<li><a href="#noticias">Noticias</a></li>-->
+            <li><a href="articulos.html">Artículos</a></li> 
+            <!-- <li><a href="#biblioteca">Biblioteca</a></li>-->
+             <!-- <li><a href="#secic">Secic</a></li>-->
+            <li><a href="pensum.html">Pensum</a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <img src="C:\Users\mario\OneDrive\Desktop\Web-Secic\fotos\vectorsecic.png" alt="Logo SECIC" class="main-logo">
+                <h1>Sociedad Estudiantil Científica De Ingeniería Civil <br> <span>secic-umss</span></h1>
+                <hr class="divider">
+                <p id="typewriter-text" class="slogan"></p>
+            </div>
+
+            <div class="hero-announcements">
+                <h2>Anuncios</h2>
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <img src="ruta-banner-jornadas.jpg" alt="XI Jornadas de Investigación">
+                        <div class="carousel-overlay">
+                            <a href="#" class="btn-leer-mas">Leer más</a>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="ruta-otro-banner.jpg" alt="Otro Anuncio">
+                        <div class="carousel-overlay">
+                            <a href="#" class="btn-leer-mas">Leer más</a>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+<!-- Sección de Estadísticas Animadas -->
+    <section class="stats-section">
+        <div class="stat-box">
+            <h3 class="counter" data-target="40">0</h3>
+            <p>Miembros Activos</p>
+        </div>
+        <div class="stat-box">
+            <h3 class="counter" data-target="0">0</h3>
+            <p>Proyectos de Investigación</p>
+        </div>
+        <div class="stat-box">
+            <h3 class="counter" data-target="23">0</h3>
+            <p>Años de Trayectoria</p>
+        </div>
+    </section>
+
+    <div class="social-footer">
+        <a href="https://www.facebook.com/umss.secic"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/umss.secic/"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

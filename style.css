@@ -1,0 +1,460 @@
+:root {
+    --primary-blue: #003366;
+    --bg-gray: #e8ecef;
+    --text-dark: #333;
+    --white: #ffffff;
+    --accent: #d9534f; /* Un rojo oscuro para detalles, combinando con el logo */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: var(--bg-gray);
+    color: var(--text-dark);
+    padding-bottom: 100px; /* AÑADE O REVISA ESTA LÍNEA: Hace espacio para la barra fija al final de la página */
+}
+
+/* Navegación */
+#navbar {
+    background-color: var(--primary-blue);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#navbar.scrolled {
+    background-color: rgba(0, 51, 102, 0.95);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-logo {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #a0c4ff;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 120px 5% 50px;
+    min-height: 100vh;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    text-align: center;
+}
+
+.main-logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.1));
+}
+
+.hero-text h1 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.divider {
+    border: none;
+    height: 2px;
+    background-color: var(--primary-blue);
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.slogan {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    min-height: 40px; /* Evita saltos cuando escribe el JS */
+}
+
+/* Carrusel de Anuncios */
+.hero-announcements {
+    text-align: center;
+}
+
+.hero-announcements h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.carousel-slide {
+    display: none;
+    position: relative;
+}
+
+.carousel-slide.active {
+    display: block;
+    animation: fade 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.btn-leer-mas {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-leer-mas:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+@keyframes fade {
+    from { opacity: 0.8; }
+    to { opacity: 1; }
+}
+
+/* Estadísticas Animadas */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 5%;
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Nueva Barra de Redes Sociales Fija al Fondo (Corregida) --- */
+.social-footer {
+    position: fixed;      /* Mantiene la funcionalidad de estar fija */
+    bottom: 0;            /* Pegada al fondo absoluto de la pantalla */
+    left: 0;              /* Pegada al borde izquierdo */
+    width: 100%;          /* Ocupa todo el ancho de la pantalla */
+    z-index: 999;         /* Asegura que esté por encima del contenido */
+    
+    /* ESTO ES LA CLAVE PARA CENTRAR SIN BURBUJA */
+    display: flex;        /* Usamos flexbox */
+    justify-content: center; /* Centramos los iconos horizontalmente */
+    gap: 3rem;            /* Espacio grande y cómodo entre los iconos (como estaban antes) */
+    
+    background-color: var(--bg-gray); /* Mismo color de fondo que el body para que parezca limpio */
+    padding: 2rem 0;      /* Espaciado arriba y abajo (como estaban antes) */
+    text-align: center;   /* Alineación extra para navegadores viejos */
+    
+    /* ELIMINAMOS EL EFECTO BURBUJA */
+    border-radius: 0;     /* Sin bordes redondeados */
+    box-shadow: none;     /* Sin sombritas flontantes */
+}
+
+/* Reajustamos los iconos para que se parezcan a los originales */
+.social-footer a {
+    color: #555;          /* Gris oscuro original de los iconos */
+    font-size: 2.2rem;    /* Tamaño grande (como estaban antes) */
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block; /* Requerido para el efecto transform */
+    margin: 0;            /* Quitamos márgenes manuales, el gap lo maneja */
+    text-decoration: none;
+}
+
+/* El efecto al pasar el mouse (hover) sigue funcionando */
+.social-footer a:hover {
+    color: #0fbaff;       /* El azul brillante que te gustó */
+    transform: translateY(-5px); /* El pequeño salto hacia arriba */
+}
+
+/* El efecto al pasar el mouse sigue funcionando */
+.social-footer a:hover {
+    color: #0fbaff;       /* O usa var(--accent) si definiste el rojo oscuro */
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Sección de Artículos --- */
+.articles-section {
+    padding: 80px 5%;
+    background-color: var(--white); /* Fondo blanco para que resalte tras el gris/azul */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+}
+
+.section-title p {
+    color: #666;
+    font-style: italic;
+}
+
+.articles-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Espacio entre cada artículo */
+}
+
+/* Tarjeta del artículo (Flexbox al rescate) */
+.article-card {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--bg-gray);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px); /* Pequeño salto al pasar el mouse */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* La magia del ZigZag: si tiene la clase "reversed", el texto va a la izquierda */
+.article-card.reversed {
+    flex-direction: row-reverse;
+}
+
+.article-img {
+    flex: 1; /* Ocupa la mitad del espacio */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.article-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ccc; /* Un borde sutil por si la imagen es blanca */
+}
+
+.article-content {
+    flex: 1.2; /* Ocupa un poco más de la mitad para dar respiro al texto */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.journal-tag {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.article-content h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.authors {
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.authors i {
+    color: var(--primary-blue);
+}
+
+.description {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón DOI */
+.btn-doi {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-doi:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* --- Adaptación a Teléfonos (Responsive) --- */
+@media (max-width: 768px) {
+    /* Aquí forzamos a que TODOS los artículos (normales y reversed) se apilen verticalmente */
+    .article-card, 
+    .article-card.reversed {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .article-img, .article-content {
+        width: 100%;
+    }
+    
+    .article-content h3 {
+        font-size: 1.4rem;
+    }
+}
+/* --- Sección del Pensum --- */
+.pensum-section {
+    padding: 40px 5% 100px; /* Padding inferior grande para que no lo tape la barra social */
+    background-color: var(--white);
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* El contenedor que soluciona el problema en móviles */
+.pensum-wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #6a9cba; /* Un color de fondo parecido al que tenías en Wix por si hay transparencias */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    
+    /* LA MAGIA PARA CELULARES ESTÁ AQUÍ */
+    overflow-x: auto; 
+    -webkit-overflow-scrolling: touch; /* Hace que el deslizamiento en iPhone sea suave */
+}
+
+.pensum-img {
+    width: 100%;
+    /* Obligamos a la imagen a no encogerse más de esto para que las letras se lean */
+    min-width: 800px; 
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+/* Estilos del botón de descarga potente */
+.download-container {
+    margin-top: 3rem;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #0fbaff; /* Cambia a un azul más brillante */
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(15, 186, 255, 0.4);
+}
+
+.btn-download i {
+    font-size: 1.5rem;
+}
