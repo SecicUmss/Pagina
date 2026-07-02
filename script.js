@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (subjects.length === 0) return; // Si no hay materias, no hacemos nada
 
     // Definimos las 5 ramas de tu pensum
-    const ramas = ['estructuras', 'topografia', 'calculo', 'sanitaria', 'suelos'];
+   const ramas = ['estructuras', 'topografia', 'calculo', 'sanitaria', 'suelos', 'grado'];
 
     function evaluatePensum() {
         // Evaluamos cada rama por separado
