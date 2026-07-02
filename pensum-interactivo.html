@@ -11,12 +11,9 @@
 
     <nav id="navbar">
         <div class="nav-logo">SECIC</div>
-            <ul class="nav-links">
+        <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
-             <!--<li><a href="#noticias">Noticias</a></li>-->
-            <li><a href="articulos.html">Artículos</a></li> 
-            <!-- <li><a href="#biblioteca">Biblioteca</a></li>-->
-             <!-- <li><a href="#secic">Secic</a></li>-->
+            <li><a href="articulos.html">Artículos</a></li>
             <li><a href="pensum.html">Pensum</a></li>
             <li><a href="pensum-interactivo.html">Pensum Interactivo</a></li>
         </ul>
@@ -28,7 +25,7 @@
         <div class="section-title">
             <h2>Simulador de Malla Curricular</h2>
             <hr class="divider">
-            <p>Se mantendrán habilitadas hasta 2 materias por rama simultáneamente.</p>
+            <p>Se mantendrán habilitadas hasta 2 materias por rama simultáneamente (1° al 9° Semestre).</p>
         </div>
 
         <div class="pensum-legend">
@@ -38,41 +35,92 @@
         </div>
 
         <div class="pensum-grid">
-            <div class="semester-header">1° SEMESTRE</div>
-            <div class="semester-header">2° SEMESTRE</div>
-            <div class="semester-header">3° SEMESTRE</div>
-            <div class="semester-header">4° SEMESTRE</div>
-            <div class="semester-header">5° SEMESTRE</div>
+            
+            <div class="semester-col">
+                <div class="semester-header">1° SEM</div>
+                <button class="subject-btn available" data-rama="estructuras" data-nivel="1">Dib. Técnico</button>
+                <button class="subject-btn available" data-rama="topografia" data-nivel="1">Álgebra I</button>
+                <button class="subject-btn available" data-rama="calculo" data-nivel="1">Cálculo I</button>
+                <button class="subject-btn available" data-rama="sanitaria" data-nivel="1">Física I</button>
+                <button class="subject-btn available" data-rama="suelos" data-nivel="1">Química General</button>
+            </div>
 
-            <button class="subject-btn available" data-rama="estructuras" data-nivel="1">Dib. Técnico</button>
-            <button class="subject-btn available" data-rama="estructuras" data-nivel="2">Geometría Descriptiva</button>
-            <button class="subject-btn locked" data-rama="estructuras" data-nivel="3">Análisis Vec. Tensorial</button>
-            <button class="subject-btn locked" data-rama="estructuras" data-nivel="4">Estructuras Isoestáticas</button>
-            <button class="subject-btn locked" data-rama="estructuras" data-nivel="5">Resistencia de Materiales I</button>
+            <div class="semester-col">
+                <div class="semester-header">2° SEM</div>
+                <button class="subject-btn available" data-rama="estructuras" data-nivel="2">Geom. Descriptiva</button>
+                <button class="subject-btn available" data-rama="topografia" data-nivel="2">Álgebra II</button>
+                <button class="subject-btn available" data-rama="calculo" data-nivel="2">Cálculo II</button>
+                <button class="subject-btn available" data-rama="sanitaria" data-nivel="2">Física II</button>
+                <button class="subject-btn available" data-rama="suelos" data-nivel="2">Geología General</button>
+            </div>
 
-            <button class="subject-btn available" data-rama="topografia" data-nivel="1">Álgebra I</button>
-            <button class="subject-btn available" data-rama="topografia" data-nivel="2">Álgebra II</button>
-            <button class="subject-btn locked" data-rama="topografia" data-nivel="3">Probabilidad y Estadística</button>
-            <button class="subject-btn locked" data-rama="topografia" data-nivel="4">Métodos Geodésicos</button>
-            <button class="subject-btn locked" data-rama="topografia" data-nivel="5">Geomática</button>
+            <div class="semester-col">
+                <div class="semester-header">3° SEM</div>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="3">Análisis Vec. Tensorial</button>
+                <button class="subject-btn locked" data-rama="topografia" data-nivel="3">Prob. y Estadística</button>
+                <button class="subject-btn locked" data-rama="calculo" data-nivel="3">Cálculo III</button>
+                <button class="subject-btn locked" data-rama="sanitaria" data-nivel="3">Electrotecnia</button>
+                <button class="subject-btn locked" data-rama="suelos" data-nivel="3">Geog. y Def. Recursos</button>
+            </div>
 
-            <button class="subject-btn available" data-rama="calculo" data-nivel="1">Cálculo I</button>
-            <button class="subject-btn available" data-rama="calculo" data-nivel="2">Cálculo II</button>
-            <button class="subject-btn locked" data-rama="calculo" data-nivel="3">Cálculo III</button>
-            <button class="subject-btn locked" data-rama="calculo" data-nivel="4">Análisis Numérico</button>
-            <button class="subject-btn locked" data-rama="calculo" data-nivel="5">Hidrología</button>
+            <div class="semester-col">
+                <div class="semester-header">4° SEM</div>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="4">Est. Isoestáticas</button>
+                <button class="subject-btn locked" data-rama="topografia" data-nivel="4">Métodos Geodésicos</button>
+                <button class="subject-btn locked" data-rama="calculo" data-nivel="4">Análisis Numérico</button>
+                <button class="subject-btn locked" data-rama="sanitaria" data-nivel="4">Computación para Ing.</button>
+                <button class="subject-btn locked" data-rama="suelos" data-nivel="4">Economía Política</button>
+            </div>
 
-            <button class="subject-btn available" data-rama="sanitaria" data-nivel="1">Física I</button>
-            <button class="subject-btn available" data-rama="sanitaria" data-nivel="2">Física II</button>
-            <button class="subject-btn locked" data-rama="sanitaria" data-nivel="3">Electrotecnia</button>
-            <button class="subject-btn locked" data-rama="sanitaria" data-nivel="4">Computación para Ingeniería</button>
-            <button class="subject-btn locked" data-rama="sanitaria" data-nivel="5">Hidráulica I</button>
+            <div class="semester-col">
+                <div class="semester-header">5° SEM</div>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="5">Res. de Materiales I</button>
+                <button class="subject-btn locked" data-rama="topografia" data-nivel="5">Geomática</button>
+                <button class="subject-btn locked" data-rama="calculo" data-nivel="5">Hidrología</button>
+                <button class="subject-btn locked" data-rama="sanitaria" data-nivel="5">Hidráulica I</button>
+                <button class="subject-btn locked" data-rama="suelos" data-nivel="5">Tec. de Materiales</button>
+            </div>
 
-            <button class="subject-btn available" data-rama="suelos" data-nivel="1">Química General</button>
-            <button class="subject-btn available" data-rama="suelos" data-nivel="2">Geología General</button>
-            <button class="subject-btn locked" data-rama="suelos" data-nivel="3">Geog. y Def. de Recursos</button>
-            <button class="subject-btn locked" data-rama="suelos" data-nivel="4">Economía Política</button>
-            <button class="subject-btn locked" data-rama="suelos" data-nivel="5">Tecnología de Materiales</button>
+            <div class="semester-col">
+                <div class="semester-header">6° SEM</div>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="6">Res. de Materiales II</button>
+                <button class="subject-btn locked" data-rama="topografia" data-nivel="6">Ing. Económica</button>
+                <button class="subject-btn locked" data-rama="calculo" data-nivel="6">Sistemas de Ing.</button>
+                <button class="subject-btn locked" data-rama="sanitaria" data-nivel="6">Hidráulica II</button>
+                <button class="subject-btn locked" data-rama="suelos" data-nivel="6">Mecánica de Suelos I</button>
+            </div>
+
+            <div class="semester-col">
+                <div class="semester-header">7° SEM</div>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="7">Est. Hiperestáticas</button>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="8">Hormigón Armado I</button>
+                <button class="subject-btn locked" data-rama="topografia" data-nivel="7">Transportes y Com.</button>
+                <button class="subject-btn locked" data-rama="calculo" data-nivel="7">Ing. Ambiental</button>
+                <button class="subject-btn locked" data-rama="sanitaria" data-nivel="7">Ing. Sanitaria I</button>
+                <button class="subject-btn locked" data-rama="suelos" data-nivel="7">Mecánica de Suelos II</button>
+            </div>
+
+            <div class="semester-col">
+                <div class="semester-header">8° SEM</div>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="9">Est. Madera y Met.</button>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="10">Hormigón Armado II</button>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="11">Mec. Medio Continuo</button>
+                <button class="subject-btn locked" data-rama="topografia" data-nivel="8">Maquinaria de Const.</button>
+                <button class="subject-btn locked" data-rama="sanitaria" data-nivel="8">Ing. Sanitaria II</button>
+                <button class="subject-btn locked" data-rama="suelos" data-nivel="8">Mec. Suelos Aplicada</button>
+            </div>
+
+            <div class="semester-col">
+                <div class="semester-header">9° SEM</div>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="12">Dir. de Obras y Val.</button>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="13">Fundaciones I</button>
+                <button class="subject-btn locked" data-rama="estructuras" data-nivel="14">Elementos Finitos</button>
+                <button class="subject-btn locked" data-rama="topografia" data-nivel="9">Carreteras I</button>
+                <button class="subject-btn locked" data-rama="sanitaria" data-nivel="9">Obras Hidráulicas</button>
+                <button class="subject-btn locked" data-rama="suelos" data-nivel="9">Const. de Edificios</button>
+                <button class="subject-btn locked" data-rama="grado" data-nivel="1">Taller Mod. Grad. I</button>
+            </div>
+
         </div>
     </section>
 
