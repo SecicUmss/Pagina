@@ -501,17 +501,24 @@ body {
 .box.available { background-color: white; }
 .box.locked { background-color: #a0a0a0; }
 
-/* Grilla de Materias */
+/* Grilla de Materias Actualizada */
 .pensum-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex; /* Cambiamos grid por flex para soportar columnas largas */
     gap: 15px;
     max-width: 1200px;
     margin: 0 auto;
-    overflow-x: auto; /* Para celulares */
+    overflow-x: auto;
     padding-bottom: 20px;
+    align-items: flex-start; /* Evita que las columnas se estiren deformes */
 }
 
+/* Nueva clase para las columnas */
+.semester-col {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 180px; /* Ancho fijo para que todas las columnas sean iguales */
+}
 .semester-header {
     background-color: #88b0c7;
     color: #1a1a1a;
